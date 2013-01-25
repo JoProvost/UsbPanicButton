@@ -8,7 +8,7 @@
 #ifndef USB_PANIC_BUTTON_H
 #define	USB_PANIC_BUTTON_H
 
-#include "UsbDevice.h"
+#include "HidDevice.h"
 
 #define ID_VENDOR 0x1d34
 #define ID_PRODUCT 0x000d
@@ -21,14 +21,14 @@ class USBPanicButton {
 public:
 	static USBPanicButton* createFromConnectedDevice();
 
-	USBPanicButton(UsbDevice* panicButtonDevice);
+	USBPanicButton(HidDevice* panicButtonDevice);
 	bool isConnected();
 	ButtonState getButtonState();
 	bool isDown();
 	void close();
 private:
 
-	UsbDevice* panicButtonDevice;
+	HidDevice* panicButtonDevice;
 };
 
 #endif

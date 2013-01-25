@@ -5,7 +5,7 @@ This is a software to use the usb panic button by GADGETREE on linux.
 
 Url panic button product URL : http://www.thesource.ca/estore/product.aspx?language=en-CA&product=8003038&catalog=Online&tab=1
 
-This appliation uses libusb-1.0 (sudo apt-get install libusb-1.0-0-dev on ubuntu)
+This appliation uses HIDAPI (https://github.com/signal11/hidapi.git) to work on any OS (Linux, OS X, ...)
 
 Compiling
 ---------
@@ -32,4 +32,10 @@ The following example run the tests in IntelliJ IDEA when pressing the button
         
         # sudo apt-get install xautomation
         # panicbutton 'xte "keydown Shift_L" "keydown F10" "keyup F10" "keyup Shift_L"' &
+
+Same thing on OS X
+        
+        # panicbutton "osascript -e 'tell application \"System Events\"
+        > key code 109 using {shift down}
+        > end tell'" &
 

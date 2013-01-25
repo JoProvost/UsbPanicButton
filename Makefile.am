@@ -5,5 +5,5 @@ INCLUDES = $(all_includes)
 	@CXXCOMPILE@ $@ $<
 
 bin_PROGRAMS = panicbutton
-panicbutton_SOURCES = src/main.cpp  src/UsbDevice.cpp  src/UsbDevice.h  src/USBPanicButton.cpp  src/USBPanicButton.h
-panicbutton_LDADD  = @LIBUSB_1_0@ -lm
+panicbutton_SOURCES = src/main.cpp  src/HidDevice.cpp  src/HidDevice.h  src/USBPanicButton.cpp  src/USBPanicButton.h
+panicbutton_LDADD  = @LIBHIDAPI@ -lm
